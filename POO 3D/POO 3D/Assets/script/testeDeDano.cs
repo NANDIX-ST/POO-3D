@@ -7,16 +7,14 @@ public class TesteDeDano : MonoBehaviour
     
     private void OnCollisionEnter(Collision colisao)
     {
-        Debug.Log(colisao.gameObject.name);
-        if (colisao.gameObject.CompareTag("Inimigo"))
+        if (colisao.gameObject.CompareTag("Ataque"))
         {
-            
-            int energia_atual = personagem.EnergiaDoPersonagem() 
-                                - colisao.gameObject.GetComponent<Inimigo>().DanoDonimigo();
+           int energia_atual = personagem.Energia() 
+                               - colisao.gameObject.GetComponent<Ataque>().AtaqueDoInimigo();
            
-            personagem.AtribuirEnergia(energia_atual);
+           personagem.AtribuirEnergia(energia_atual);
            
-            Debug.Log("O personagem " +personagem.NomeDoPersonagem()+" tem agora "+personagem.EnergiaDoPersonagem());
+           Debug.Log("O personagem " +personagem.Nome()+" tem agora "+personagem.Energia());
         }
     }
 

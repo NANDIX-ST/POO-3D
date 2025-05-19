@@ -1,28 +1,85 @@
-using System;
+using UnityEngine;
 
 public class Inimigo : Personagem
 {
-    public string Armadura;
-    public string Arma;
-
-    public Inimigo(string nome, int energia, int forcaAtaque, int forcaDoPulo,
-        int velocidade, int numeroDePes, int numeroDeMaos,
-        string armadura, string arma)
-        : base(nome, energia, forcaAtaque, forcaDoPulo, velocidade, numeroDePes, numeroDeMaos)
+    public enum ArmaDoInimigo
     {
-        Armadura = armadura;
-        Arma = arma;
+        ESPADA, MACHADO, ADAGA
     }
 
-    public override void MostrarStatus()
+    public enum ArmaduraDoInimigo
     {
-        base.MostrarStatus();
-        Console.WriteLine($"Armadura: {Armadura}");
-        Console.WriteLine($"Arma: {Arma}");
+        MADEIRA, COURO, BRONZE, ACO
     }
 
-    public int DanoDonimigo()
+    [ SerializeField ]
+    private ArmaduraDoInimigo armadura;
+    [ SerializeField ]
+    private ArmaDoInimigo arma;
+
+    public void AtribuirArmadura(ArmaduraDoInimigo armadura)
     {
-        return 12;
+        this.armadura = armadura;
+    }
+
+    public ArmaduraDoInimigo Armadura()
+    {
+        return this.armadura;
+    }
+
+    public void AtribuirArma(ArmaDoInimigo arma)
+    {
+        this.arma = arma;
+    }
+
+    public ArmaDoInimigo Arma()
+    {
+        return this.arma;
+    }
+
+
+    public int DanoDoInimigo()
+    {
+        int dano = 0;
+
+        switch (arma)
+        {
+            case ArmaDoInimigo.ESPADA:
+                dano = Forca_Ataque() + 10;
+                break;
+            case ArmaDoInimigo.MACHADO:
+                dano = Forca_Ataque() + 18;
+                break;
+            case ArmaDoInimigo.ADAGA:
+                dano = Forca_Ataque() + 5;
+                break;
+        }
+        
+        // dano do ataque com a arma
+        
+        return dano;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    void Start()
+    {
+        
+    }
+    void Update()
+    {
+        
     }
 }

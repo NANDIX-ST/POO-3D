@@ -1,47 +1,46 @@
 using UnityEngine;
 
-public class Play : MonoBehaviour
+public class MovimentoPlayer : MonoBehaviour
 {
-    private Rigidbody rigididbory;
-
-    public float velocidade = 10;
-        
-    void Start()
-    {
-        rigididbory = GetComponent<Rigidbody>();
-        
-    }
+    private Rigidbody _rigidbody; 
     
+    private float velocidade;
+     void Start()
+     {
+         velocidade = gameObject.GetComponent<Personagem>().Velocidade();
+        _rigidbody = GetComponent<Rigidbody>();
+    }
     void Update()
     {
         Vector3 posicao = transform.position;
         
-        
-        
-        //Esquerda x-
+        //esquerda X-
         if (Input.GetKey(KeyCode.A))
         {
-            posicao.x = transform.position.x - velocidade * Time.deltaTime;
+            posicao.x = posicao.x - velocidade * Time.deltaTime;
         }
-        
-        //Direita x+
+
+        //direira  X+
         if (Input.GetKey(KeyCode.D))
         {
-            posicao.x = transform.position.x + velocidade * Time.deltaTime;
+            posicao.x = posicao.x + velocidade * Time.deltaTime;
         }
         
-        //Cima z+
+        //cima  Z+
         if (Input.GetKey(KeyCode.W))
         {
-            posicao.z = transform.position.z + velocidade * Time.deltaTime;
+            posicao.z = posicao.z + velocidade * Time.deltaTime;
         }
         
-        //Baixo Z-
+        //baixo Z-
         if (Input.GetKey(KeyCode.S))
         {
-            posicao.z = transform.position.z - velocidade * Time.deltaTime;
+            posicao.z = posicao.z - velocidade * Time.deltaTime;
         }
         
         transform.position = posicao;
+        
+        
+
     }
 }

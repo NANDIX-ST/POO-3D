@@ -1,132 +1,105 @@
-using System;
+using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class Personagem : MonoBehaviour
 {
     [ SerializeField ]
-    public string Nome;
+    private string nome;
     [ SerializeField ]
-    public int Energia;
+    private int energia;
     [ SerializeField ]
-    public int ForcaAtaque;
+    private int forca_ataque;
     [ SerializeField ]
-    public int ForcaDoPulo;
+    private float forca_do_pulo;
     [ SerializeField ]
-    public int Velocidade; 
+    private float velocidade;
     [ SerializeField ]
-    public int NumeroDePes;
+    private int numero_de_pes;
     [ SerializeField ]
-    public int NumeroDeMaos;
-    [ SerializeField ]
-    public Personagem() {}
-
-public Personagem(string nome, int energia, int forcaAtaque, int forcaDoPulo,
-                      int velocidade, int numeroDePes, int numeroDeMaos)
-    {
-        Nome = nome;
-        Energia = energia;
-        ForcaAtaque = forcaAtaque;
-        ForcaDoPulo = forcaDoPulo;
-        Velocidade = velocidade;
-        NumeroDePes = numeroDePes;
-        NumeroDeMaos = numeroDeMaos;
-        
-    }
+    private int numero_de_maos;
 
     public void AtribuirNome(string nome)
     {
-        this.Nome = nome;
+        this.nome = nome;
     }
-    public string NomeDoPersonagem()
+
+    public string Nome()
     {
-        return this.Nome;
+        return this.nome;
     }
+
     public void AtribuirEnergia(int energia)
     {
-        this.Energia = energia;
+        this.energia = energia;
     }
 
-    public int EnergiaDoPersonagem()
+    public int Energia()
     {
-        return this.Energia;
+        return this.energia;
     }
 
-    public void AtribuirForcaAtaque(int forcaAtaque)
+    public void AtribuirForca_Ataque(int forca_ataque)
     {
-        this.ForcaAtaque = forcaAtaque;
+        this.forca_ataque = forca_ataque;
     }
 
-    public int ForcaAtaqueDoPersonagem()
+    public int Forca_Ataque()
     {
-        return this.ForcaAtaque;
+        return this.forca_ataque;
     }
 
-    public void AtribuirForcaDoPulo(int forcaDoPulo)
+    public void AtribuirForca_do_pulo(float forca_do_pulo)
     {
-        this.ForcaDoPulo = forcaDoPulo;
+        this.forca_do_pulo = forca_do_pulo;
     }
 
-    public int ForcaDoPuloDoPersonagem()
+    public float Forca_do_pulo()
     {
-        return this.ForcaDoPulo;
+        return this.forca_do_pulo;
     }
 
-    public void AtribuirVelocidade(int velocidade)
+
+    public void AtribuirVelocidade(float velocidade)
     {
-        this.Velocidade = velocidade;
+        this.velocidade = velocidade;
     }
 
-    public int VelocidadeDoPersonagem()
+    public float Velocidade()
     {
-        return this.Velocidade;
+        return this.velocidade;
     }
 
-    public void AtribuirNumeroDePes(int numeroDePes)
+    public void AtribuitNumero_de_pes(int numero_de_pes)
     {
-        this.NumeroDePes = numeroDePes;
+        this.numero_de_pes = numero_de_pes;
     }
 
-    public int NumeroDePesDoPersonagem()
+    public int Numero_de_pes()
     {
-        return this.NumeroDePes;
+        return this.numero_de_pes;
     }
 
-    public void AtribuirNumeroDeMaos(int numeroDeMaos)
+    public void AtribuitNumero_de_maos(int numero_de_maos)
     {
-        this.NumeroDeMaos = numeroDeMaos;
+        this.numero_de_maos = numero_de_maos;
     }
 
-    public int NumeroDeMaosDoPersonagem()
+    public int Numero_de_maos()
     {
-        return this.NumeroDeMaos;
+        return this.numero_de_maos;
     }
 
-    public virtual void MostrarStatus()
-    {
-        Console.WriteLine($"=== STATUS DE {Nome.ToUpper()} ===");
-        Console.WriteLine($"Energia: {Energia}");
-        Console.WriteLine($"Força de Ataque: {ForcaAtaque}");
-        Console.WriteLine($"Força do Pulo: {ForcaDoPulo}");
-        Console.WriteLine($"Velocidade: {Velocidade}");
-        Console.WriteLine($"Número de Pés: {NumeroDePes}");
-        Console.WriteLine($"Número de Mãos: {NumeroDeMaos}");
-    }
 
-    public void Atacar(Personagem alvo)
-    {
-        Console.WriteLine($"{Nome} atacou {alvo.Nome} com força {ForcaAtaque}");
-        alvo.ReceberDano(ForcaAtaque);
-    }
 
-    public void Pular()
-    {
-        Console.WriteLine($"{Nome} pulou com força {ForcaDoPulo}");
-    }
 
-    public void ReceberDano(int dano)
+
+    void Start()
     {
-        Energia -= dano;
-        if (Energia < 0) Energia = 0;
-        Console.WriteLine($"{Nome} recebeu {dano} de dano. Energia restante: {Energia}");
+        
+    }
+    void Update()
+    {
+        
     }
 }

@@ -1,27 +1,30 @@
 using UnityEngine;
 
-public class Testecodigo : MonoBehaviour
+public class TesteCodigo : MonoBehaviour
 {
- public void mensagem(string mensagem)
- {
-     Debug.Log(mensagem);
- }
+    public void Mensagem(string mensagem)
+    {
+        Debug.Log(mensagem);
+        return;
+    }
 
- public void IdadeDaPessoa(string nome, int idade)
- {
-     string Fase = "A Pessoa de nome " + nome + " tem " + idade + " anos"; 
-     mensagem(Fase);
- }
+    public void IdadeDaPessoa(string nome, int idade)
+    {
+        //Debug.Log("A pessoa de nome "+nome+" tem "+idade+" anos.");
 
- void Start()
- {
-     IdadeDaPessoa("joao", 15);
-     IdadeDaPessoa("maria", 43);
-     IdadeDaPessoa("Jose", 63);
-     IdadeDaPessoa("marcia", 48);
- }
- 
-    // Update is called once per frame
+        string frase = "A pessoa de nome " + nome + " tem " + idade + " anos.";
+        
+        Mensagem(frase);
+    }
+
+    void Start()
+    {
+        IdadeDaPessoa("João", 15);
+        IdadeDaPessoa("Maria",43);
+        IdadeDaPessoa("Jose",43);
+        IdadeDaPessoa("Marcia",48);
+    }
+    
     void Update()
     {
         
