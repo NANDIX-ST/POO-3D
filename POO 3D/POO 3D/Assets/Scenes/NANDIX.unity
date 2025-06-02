@@ -290,7 +290,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49363ada015dc8648a2a2c23cab74497, type: 2}
+  - {fileID: 2100000, guid: 9149754e70840df4abb4ddba5f43d8b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -671,13 +671,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.64847624, y: -0.19182079, z: 0.17375866, w: 0.71588504}
+  m_LocalPosition: {x: -6.9, y: 26.7, z: -42.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 84.343, y: -30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,9 +1010,10 @@ GameObject:
   - component: {fileID: 960443352}
   - component: {fileID: 960443354}
   - component: {fileID: 960443353}
+  - component: {fileID: 960443356}
   - component: {fileID: 960443355}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: cavera
   m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1169,6 +1170,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ataqueObject: {fileID: 1151516476}
+  andando: 0
+  ataque: 0
+  velocidadeDoAtaque: 1
   raioDeVisao: 5
   distanciaMinima: 1.5
 --- !u!136 &960443355
@@ -1194,6 +1198,20 @@ CapsuleCollider:
   m_Height: 2.2873762
   m_Direction: 1
   m_Center: {x: 0, y: 0.22120416, z: 0}
+--- !u!114 &960443356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960443345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657247d63399e934ab35a8deb9c8d0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 919132147642121820}
+  velocidadeDaAnimacao: 2
 --- !u!1 &1006276040
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,9 +4273,9 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1006276048}
+  - {fileID: 960443351}
   - {fileID: 316424557}
   - {fileID: 64792439}
   - {fileID: 890071274}
   - {fileID: 353827245}
   - {fileID: 1394338785}
-  - {fileID: 960443351}
