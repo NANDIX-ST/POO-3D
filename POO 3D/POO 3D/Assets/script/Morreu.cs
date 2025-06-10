@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Moreu : MonoBehaviour
 {
-    private Moreu(Collision colisao)
+    private void OnCollisionEnter(Collision other)
     {
-        if (gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-
 
     // Start is called before the first frame update
     void Start()
